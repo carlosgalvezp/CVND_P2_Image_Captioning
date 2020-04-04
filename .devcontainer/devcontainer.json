@@ -1,0 +1,19 @@
+{
+    "name": "cvnd_p2",
+    "image": "carlosgalvezp/cvnd_p2_image_captioning:latest",
+    "runArgs": [
+        "--user", "1000:1000",
+        "--env", "HOME=/tmp/",
+        "--env", "DISPLAY",
+        "--volume", "/home/${env:USER}/.bashrc/:/tmp/.bashrc:ro",
+        "--volume", "/etc/passwd:/etc/passwd:ro",
+        "--volume", "/etc/group:/etc/group:ro",
+        "--volume", "/tmp/.X11-unix:/tmp/.X11-unix:rw",
+        "--network", "host",
+        "--gpus", "all",
+        "--ipc", "host",
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    }
+}
