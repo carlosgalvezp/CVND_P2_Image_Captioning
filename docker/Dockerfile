@@ -10,6 +10,7 @@ RUN apt-get update && \
         python-dev \
         python-pip \
         python-setuptools \
+        python-wheel \
         python3-dev \
         python3-pip \
         python3-setuptools \
