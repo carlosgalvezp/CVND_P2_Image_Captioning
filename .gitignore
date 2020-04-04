@@ -6,3 +6,5 @@ annotations/
 .DS_Store
 
 /.venv/
+
+vocab.pkl
