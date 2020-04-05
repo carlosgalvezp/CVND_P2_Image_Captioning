@@ -25,8 +25,6 @@ class DecoderRNN(nn.Module):
     def __init__(self, embed_size, hidden_size, vocab_size, num_layers=1):
         super(DecoderRNN, self).__init__()
         
-        self.embed_size = embed_size
-        
         # Embedding layer that turns words into a vector of a specified size
         self.word_embeddings = nn.Embedding(num_embeddings=vocab_size, embedding_dim=embed_size)
 
@@ -53,10 +51,10 @@ class DecoderRNN(nn.Module):
         # to the input features, since:
         # features.shape            = [batch_size,                  embed_size]
         # captions_embeddings.shape = [batch_size, sequence_length, embed_size]
-        features = features.view((-1, 1, self.embed_size))
+        features = features.view((features.shape[0], 1, features.shape[1]))
         lstm_input = torch.cat((features, captions_embeddings), dim=1)
         
-        # Pass to LSTM
+        # Pass to LSTM. Use default zero initialization for the hidden state
         out, hidden = self.lstm(lstm_input)
         
         # Convert from hidden space to vocabulary space        
