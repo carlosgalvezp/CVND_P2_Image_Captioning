@@ -2,7 +2,7 @@
     "name": "cvnd_p2",
     "image": "carlosgalvezp/cvnd_p2_image_captioning:latest",
     "runArgs": [
-        "--user", "1000:1000",
+        "--user", "1283467200:1283478178",
         "--env", "HOME=/tmp/",
         "--env", "DISPLAY",
         "--volume", "/home/${env:USER}/.bashrc/:/tmp/.bashrc:ro",
