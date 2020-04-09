@@ -8,3 +8,5 @@ annotations/
 /.venv/
 
 vocab.pkl
+
+/training_log.txt
